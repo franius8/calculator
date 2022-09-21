@@ -13,32 +13,33 @@ body {
     align-items: center;
     height: 65%;
     padding: 32px 16px;
-    background-color: blue;
+    background-color: hsl(0, 0%, 20%);
     border-radius: 15px;
 }
 
 #buttoncontainer {
     display: flex;
     flex-direction: row;
-    height: 80%;
+    height: 75%;
 }
 
 #screen {
     color: black;
-    font-size: 300%;
-    height: 20%;
+    font-size: 350%;
+    height: 25%;
     width: 98%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 #screendiv {
  text-align: right;
  width: 95%;
+ height: 60%;
  background-color: white;
- border-radius: 10px ;
+ border-radius: 10px;
  padding: 4px 16px;
 }
 
@@ -49,20 +50,38 @@ body {
     justify-content: space-around;
 }
 
-#numberbuttons button {
+button {
     width: 23%;
     height: 23%;
     border-radius: 10px;
     background-color: white;
     color: blue;
     font-weight: bold;
-    font-size: 100%;
+    font-size: 3em;
+    box-sizing: border-box;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-#numberbuttons button:hover {
-    background-color: lightblue;
+button:hover {
+    border: 2px solid blue;
+    background-color: blue;
+    color: white;
 }
 
 #number0 {
     flex-basis: 73.5%;
+}
+.operandbutton {
+    color: red;
+}
+
+.operandbutton:hover {
+    color: white;
+    background-color: red;
+    border: 2px solid red;
 }
