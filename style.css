@@ -74,13 +74,13 @@ button:hover {
 }
 
 #number0 {
-    flex-basis: 73.5%;
+    flex-basis: 48%;
 }
-.operandbutton {
+.operandbutton, #equalbutton {
     color: red;
 }
 
-.operandbutton:hover {
+.operandbutton:hover, .operandbutton.active, #equalbutton:hover {
     color: white;
     background-color: red;
     border: 2px solid red;
