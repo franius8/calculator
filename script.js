@@ -41,18 +41,22 @@ function performOperation() {
     const secondNumber = document.querySelector("#screendiv").innerText;
     switch (operationType) {
         case 'add':
-            display.textContent = +firstNumber + +secondNumber;
+            display.textContent = round(+firstNumber + +secondNumber);
             break;
         case 'subtract':
-            display.textContent = +firstNumber - +secondNumber;
+            display.textContent = round(+firstNumber - +secondNumber);
             break;
         case 'multiply':
-            display.textContent = +firstNumber * +secondNumber;
+            display.textContent = round(+firstNumber * +secondNumber);
             break;
         case 'divide':
-            display.textContent = +firstNumber / +secondNumber;
+            display.textContent = round(+firstNumber / +secondNumber);
             break;
         default:
             break;
     }
+}
+
+function round (number) {
+    return Math.round(number * 10) / 10;
 }
