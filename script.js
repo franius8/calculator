@@ -6,6 +6,7 @@ const clear = document.querySelector('#clear');
 const clearCurrent = document.querySelector('#clearcurrent');
 let operationType = null;
 let firstNumber;
+let finishedOperation
 
 numberButtons.forEach(button => {
     button.addEventListener('click', addToDisplay);
@@ -26,7 +27,10 @@ function addToDisplay() {
     const number = (this.id).substr(-1, 1);
     const content = document.querySelector("#screendiv").innerText;
     const length = document.querySelector("#screendiv").innerText.length;
-    if (content === '0' || operationType !== null) {
+    if (finishedOperation === true) {
+        display.textContent = number;
+        finishedOperation = false;
+    } else if (content === '0' || operationType !== null) {
         display.textContent = number;
     } else if (length < 10) {
         display.textContent += number;
@@ -75,6 +79,8 @@ function performOperation() {
         default:
             break;
     }
+    operationType = null;
+    finishedOperation = true;
 }
 
 function round (number) {
