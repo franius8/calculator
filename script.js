@@ -2,18 +2,22 @@ const numberButtons = document.querySelectorAll('.numberbutton');
 const display = document.querySelector('#screendiv');
 const operandButtons = document.querySelectorAll('.operandbutton');
 const equalButton = document.querySelector('#equalbutton');
+const clear = document.querySelector('#clear');
+const clearCurrent = document.querySelector('#clearcurrent');
 let operationType = null;
 let firstNumber;
 
 numberButtons.forEach(button => {
-    button.addEventListener('click', addToDisplay)
+    button.addEventListener('click', addToDisplay);
 });
 
 operandButtons.forEach(button => {
-    button.addEventListener('click', changeOperationType)
+    button.addEventListener('click', changeOperationType);
 });
 
-equalButton.addEventListener('click', performOperation)
+equalButton.addEventListener('click', performOperation);
+
+clearCurrent.addEventListener('click', clearFunction);
 
 
 function addToDisplay() {
@@ -52,6 +56,12 @@ function performOperation() {
         case 'divide':
             display.textContent = round(+firstNumber / +secondNumber);
             break;
+        case 'exponent':
+            display.textContent = round((+firstNumber) ** (+secondNumber));
+            break;
+        case 'modulo':
+            display.textContent = round((+firstNumber) % (+secondNumber));
+            break;
         default:
             break;
     }
@@ -59,4 +69,10 @@ function performOperation() {
 
 function round (number) {
     return Math.round(number * 10) / 10;
+}
+
+function clearFunction () {
+    display.textContent = '0';
+    const activeOperand = document.querySelector('#' + operationType);
+    activeOperand.classList.add('active');
 }
