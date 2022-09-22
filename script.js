@@ -37,6 +37,9 @@ function addToDisplay() {
 }
 
 function changeOperationType() {
+    if (operationType !== null) {
+        performOperation();
+    }
     operationType = this.id;
     this.classList.add('active');
     firstNumber = document.querySelector("#screendiv").innerText;
