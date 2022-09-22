@@ -76,11 +76,11 @@ button:hover {
 #number0 {
     flex-basis: 48%;
 }
-.operandbutton, #equalbutton {
+.operandbutton, #equalbutton, #clearcurrent {
     color: red;
 }
 
-.operandbutton:hover, .operandbutton.active, #equalbutton:hover {
+.operandbutton:hover, .operandbutton.active, #equalbutton:hover, #clearcurrent:hover {
     color: white;
     background-color: red;
     border: 2px solid red;
@@ -88,4 +88,15 @@ button:hover {
 
 .firstrow {
     font-size: 2em;
+}
+
+#clear {
+    color: white;
+    background-color: red;
+    border: 2px solid red;
+}
+
+#clear:hover {
+    background-color: white;
+    color: red;
 }
