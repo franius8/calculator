@@ -37,6 +37,10 @@ function addToDisplay() {
 }
 
 function changeOperationType() {
+    operandButtons.forEach(button => button.classList.remove('active'));
+    if (operationType !== null) {
+        performOperation();
+    }
     operationType = this.id;
     this.classList.add('active');
     firstNumber = document.querySelector("#screendiv").innerText;
@@ -56,7 +60,11 @@ function performOperation() {
             display.textContent = round(+firstNumber * +secondNumber);
             break;
         case 'divide':
+            if (secondNumber === '0') {
+                display.textContent = 'Really?';
+            } else {
             display.textContent = round(+firstNumber / +secondNumber);
+            }
             break;
         case 'exponent':
             display.textContent = round((+firstNumber) ** (+secondNumber));
