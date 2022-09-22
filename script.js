@@ -7,6 +7,7 @@ const operandButtons = document.querySelectorAll('.operandbutton');
 const equalButton = document.querySelector('#equalbutton');
 const clear = document.querySelector('#clear');
 const clearCurrent = document.querySelector('#clearcurrent');
+const backspaceButton = document.querySelector('#backspace');
 let operationType = null;
 let firstNumber;
 let finishedOperation;
@@ -27,6 +28,8 @@ equalButton.addEventListener('click', performOperation);
 clearCurrent.addEventListener('click', clearCurrentFunction);
 
 clear.addEventListener('click', clearFunction);
+
+backspaceButton.addEventListener('click', backspaceFunction);
 
 document.addEventListener('keydown', addKeyboardInput);
 
@@ -90,9 +93,6 @@ function performOperation() {
             break;
         case 'exponent':
             display.textContent = round((+firstNumber) ** (+secondNumber));
-            break;
-        case 'modulo':
-            display.textContent = round((+firstNumber) % (+secondNumber));
             break;
         default:
             break;
@@ -184,5 +184,16 @@ function displayConcatContent (number) {
     const content = document.querySelector("#screendiv").innerText;
     if (number !== '.' || !content.includes('.')) {
         display.textContent += number;
+    }
+}
+
+function backspaceFunction () {
+    const content = document.querySelector("#screendiv").innerText;
+    const length = document.querySelector("#screendiv").innerText.length;
+    if (length === 1) {
+        display.textContent = '0';
+    } else {
+        const slicedContent = content.slice(0, -1);
+        display.textContent = slicedContent;
     }
 }

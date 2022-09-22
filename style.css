@@ -76,11 +76,11 @@ button:hover {
 /* #number0 {
     flex-basis: 48%;
 } */
-.operandbutton, #equalbutton, #clearcurrent {
+.operandbutton, #equalbutton, #clearcurrent, #backspace {
     color: red;
 }
 
-.operandbutton:hover, .operandbutton.active, #equalbutton:hover, #clearcurrent:hover {
+.operandbutton:hover, .operandbutton.active, #equalbutton:hover, #clearcurrent:hover, #backspace.hover {
     color: white;
     background-color: red;
     border: 2px solid red;
