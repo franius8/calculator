@@ -162,6 +162,10 @@ function addKeyboardInput(e) {
         case 'a':
             document.querySelector('#clear').click();
             break;
+        case '.':
+        case ',':
+            document.querySelector('.dotbutton').click();
+            break;
         default:
             break;
     }
