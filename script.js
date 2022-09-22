@@ -1,3 +1,6 @@
+
+// Variable declarations
+
 const numberButtons = document.querySelectorAll('.numberbutton');
 const display = document.querySelector('#screendiv');
 const operandButtons = document.querySelectorAll('.operandbutton');
@@ -7,6 +10,8 @@ const clearCurrent = document.querySelector('#clearcurrent');
 let operationType = null;
 let firstNumber;
 let finishedOperation
+
+// Event listeners
 
 numberButtons.forEach(button => {
     button.addEventListener('click', addToDisplay);
@@ -22,6 +27,7 @@ clearCurrent.addEventListener('click', clearCurrentFunction);
 
 clear.addEventListener('click', clearFunction);
 
+// Functions
 
 function addToDisplay() {
     const number = (this.id).substr(-1, 1);
