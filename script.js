@@ -147,6 +147,7 @@ function addKeyboardInput(e) {
             document.querySelector('#divide').click();
             break;
         case '=':
+        case 'Enter':
             document.querySelector('#equalbutton').click();
             break;
         case '^':
