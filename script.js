@@ -9,7 +9,8 @@ const clear = document.querySelector('#clear');
 const clearCurrent = document.querySelector('#clearcurrent');
 let operationType = null;
 let firstNumber;
-let finishedOperation
+let finishedOperation;
+let operationInProgress = false;
 
 // Event listeners
 
@@ -38,8 +39,11 @@ function addToDisplay() {
     if (finishedOperation === true) {
         display.textContent = number;
         finishedOperation = false;
-    } else if (content === '0' || operationType !== null) {
+    } else if (content === '0') {
         display.textContent = number;
+    } else if (operationType !== null && operationInProgress === false) {
+        display.textContent = number;
+        operationInProgress = true;
     } else if (length < 10) {
         display.textContent += number;
     } else {
@@ -95,6 +99,7 @@ function performOperation() {
     }
     operationType = null;
     finishedOperation = true;
+    operationInProgress = false;
 }
 
 function round (number) {
@@ -103,6 +108,7 @@ function round (number) {
 
 function clearCurrentFunction () {
     display.textContent = '0';
+    operationInProgress = false;
     const activeOperand = document.querySelector('#' + operationType);
     activeOperand.classList.add('active');
 }
@@ -110,6 +116,7 @@ function clearCurrentFunction () {
 function clearFunction () {
     display.textContent = '0';
     operationType = null;
+    operationInProgress = false;
 }
 
 function addKeyboardInput(e) {
