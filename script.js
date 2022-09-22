@@ -17,7 +17,9 @@ operandButtons.forEach(button => {
 
 equalButton.addEventListener('click', performOperation);
 
-clearCurrent.addEventListener('click', clearFunction);
+clearCurrent.addEventListener('click', clearCurrentFunction);
+
+clear.addEventListener('click', clearFunction);
 
 
 function addToDisplay() {
@@ -71,8 +73,13 @@ function round (number) {
     return Math.round(number * 10) / 10;
 }
 
-function clearFunction () {
+function clearCurrentFunction () {
     display.textContent = '0';
     const activeOperand = document.querySelector('#' + operationType);
     activeOperand.classList.add('active');
+}
+
+function clearFunction () {
+    display.textContent = '0';
+    operationType = null;
 }
