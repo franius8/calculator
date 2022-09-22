@@ -37,15 +37,15 @@ function addToDisplay() {
     const content = document.querySelector("#screendiv").innerText;
     const length = document.querySelector("#screendiv").innerText.length;
     if (finishedOperation === true) {
-        display.textContent = number;
+        displayChangeContent (number);
         finishedOperation = false;
     } else if (content === '0') {
-        display.textContent = number;
+        displayChangeContent (number);
     } else if (operationType !== null && operationInProgress === false) {
-        display.textContent = number;
+        displayChangeContent (number);
         operationInProgress = true;
     } else if (length < 10) {
-        display.textContent += number;
+        displayConcatContent(number);
     } else {
         alert('Max length reached!')
     }
@@ -164,5 +164,21 @@ function addKeyboardInput(e) {
             break;
         default:
             break;
+    }
+}
+
+function displayChangeContent (number) {
+    const content = document.querySelector("#screendiv").innerText;
+    if (number !== '.') {
+        display.textContent = number;
+    } else if (!content.includes('.')) {
+        display.textContent = '0.';
+    }
+}
+
+function displayConcatContent (number) {
+    const content = document.querySelector("#screendiv").innerText;
+    if (number !== '.' || !content.includes('.')) {
+        display.textContent += number;
     }
 }

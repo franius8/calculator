@@ -73,9 +73,9 @@ button:hover {
     color: white;
 }
 
-#number0 {
+/* #number0 {
     flex-basis: 48%;
-}
+} */
 .operandbutton, #equalbutton, #clearcurrent {
     color: red;
 }
