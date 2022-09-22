@@ -47,8 +47,14 @@ function addToDisplay() {
 }
 
 function changeOperationType() {
-    operandButtons.forEach(button => button.classList.remove('active'));
-    if (operationType !== null) {
+    let activeOperand = false;
+    operandButtons.forEach(button => {
+        if (button.classList.contains('active')) {
+           button.classList.remove('active');
+           activeOperand = true;
+        }
+    });
+    if (operationType !== null && activeOperand === false) {
         performOperation();
     }
     operationType = this.id;
