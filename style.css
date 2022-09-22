@@ -52,7 +52,7 @@ body {
 
 button {
     width: 23%;
-    height: 23%;
+    height: 17%;
     border-radius: 10px;
     background-color: white;
     color: blue;
@@ -84,4 +84,8 @@ button:hover {
     color: white;
     background-color: red;
     border: 2px solid red;
+}
+
+.firstrow {
+    font-size: 2em;
 }
