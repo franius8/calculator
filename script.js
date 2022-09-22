@@ -103,7 +103,14 @@ function performOperation() {
 }
 
 function round (number) {
-    return Math.round(number * 10) / 10;
+    let result = Math.round(number * 10) / 10;
+    if (result === Infinity) {
+        result = "Too large!";
+    }
+    if (result >= 9999999999) {
+        result = result.toExponential(2);
+    }
+    return result
 }
 
 function clearCurrentFunction () {
