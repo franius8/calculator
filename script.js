@@ -27,6 +27,8 @@ clearCurrent.addEventListener('click', clearCurrentFunction);
 
 clear.addEventListener('click', clearFunction);
 
+document.addEventListener('keydown', addKeyboardInput);
+
 // Functions
 
 function addToDisplay() {
@@ -108,4 +110,44 @@ function clearCurrentFunction () {
 function clearFunction () {
     display.textContent = '0';
     operationType = null;
+}
+
+function addKeyboardInput(e) {
+    const content = document.querySelector("#screendiv").innerText;
+    const length = document.querySelector("#screendiv").innerText.length;
+    const reg = /^\d+$/;
+    if (reg.test(e.key)) {    
+        document.querySelector('#number' + e.key).click();
+    }
+    switch (e.key) {
+        case '+':
+            document.querySelector('#add').click();
+            break;
+        case '-':
+            document.querySelector('#subtract').click();
+            break;
+        case '*':
+            document.querySelector('#multiply').click();
+            break;
+        case '/':
+            document.querySelector('#divide').click();
+            break;
+        case '=':
+            document.querySelector('#equalbutton').click();
+            break;
+        case '^':
+            document.querySelector('#exponent').click();
+            break;
+        case '%':
+            document.querySelector('#modulo').click();
+            break;
+        case 'c':
+            document.querySelector('#clearcurrent').click();
+            break;
+        case 'a':
+            document.querySelector('#clear').click();
+            break;
+        default:
+            break;
+    }
 }
