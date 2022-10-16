@@ -23,9 +23,9 @@ body {
     height: 75%;
 }
 
-#screen {
+#screenbackground {
     color: black;
-    font-size: 450%;
+    font-size: 440%;
     height: 25%;
     width: 98%;
     display: flex;
@@ -34,13 +34,22 @@ body {
     flex-direction: column;
 }
 
+#screen {
+    text-align: right;
+    width: 95%;
+    height: 50%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 4px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    text-align: right;
+}
+
 #screendiv {
- text-align: right;
- width: 95%;
- height: 50%;
- background-color: white;
- border-radius: 10px;
- padding: 4px 16px;
+    text-align: right;
+    margin-left: auto;
 }
 
 #numberbuttons {
