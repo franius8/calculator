@@ -2,6 +2,7 @@ body {
     height: 100vh;
     overflow: hidden;
     display: grid;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -38,7 +39,7 @@ body {
 
 #innercontainer {
     display: grid;
-    grid-template: repeat(6, minmax(5vh, 5em)) / repeat(4, minmax(5vw, 10em));
+    grid-template: repeat(6, minmax(5vh, 5em)) / repeat(4, minmax(5vw, 8em));
     gap: 10px;
 }
 
