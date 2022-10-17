@@ -1,43 +1,26 @@
 body {
     height: 100vh;
-    display: flex;
+    overflow: hidden;
+    display: grid;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightblue;
+    grid-template: auto / auto;
 }
 
 #container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 65%;
+    display: grid;
     padding: 32px 16px;
     background-color: hsl(0, 0%, 20%);
     border-radius: 15px;
-}
-
-#buttoncontainer {
-    display: flex;
-    flex-direction: row;
-    height: 75%;
-}
-
-#screenbackground {
-    color: black;
-    font-size: 440%;
-    height: 25%;
-    width: 98%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    gap: 16px;
 }
 
 #screen {
     text-align: right;
-    width: 95%;
-    height: 50%;
+    grid-area: 1 / 1 / 1 / span 4;
     background-color: white;
     border-radius: 10px;
     padding: 4px 16px;
@@ -45,6 +28,7 @@ body {
     align-items: center;
     justify-content: right;
     text-align: right;
+    font-size: 440%;
 }
 
 #screendiv {
@@ -52,16 +36,14 @@ body {
     margin-left: auto;
 }
 
-#numberbuttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+#innercontainer {
+    display: grid;
+    grid-template: repeat(6, minmax(5vh, 5em)) / repeat(4, minmax(5vw, 10em));
+    gap: 10px;
 }
 
 button {
-    width: 23%;
-    height: 17%;
+
     border-radius: 10px;
     background-color: white;
     color: blue;
@@ -82,9 +64,6 @@ button:hover {
     color: white;
 }
 
-/* #number0 {
-    flex-basis: 48%;
-} */
 .operandbutton, #equalbutton, #clearcurrent, #backspace {
     color: red;
 }
