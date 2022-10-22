@@ -35,6 +35,7 @@ body {
 #screendiv {
     text-align: right;
     margin-left: auto;
+    font-family: 'Anonymous Pro', monospace;
 }
 
 #innercontainer {
