@@ -64,6 +64,7 @@ button:hover {
     border: 2px solid blue;
     background-color: blue;
     color: white;
+    cursor: pointer;
 }
 
 .operandbutton, #equalbutton, #clearcurrent, #backspace {
